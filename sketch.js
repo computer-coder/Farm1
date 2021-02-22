@@ -486,8 +486,8 @@ function plant_banana() {
     start_positionxb < width, plant < banana_purchased;
     plant++
   ) {
-    banana.push(new Banana(start_positionxb, start_positionyb, 150, 150));
-    console.log(banana);
+    banana.push(new Banana(start_positionxb, 100, 150, 150));
+    console.log(banana_purchased);
     start_positionxb += 100;
     if (start_positionxb > 300) {
       start_positionxb = 100;
@@ -612,72 +612,66 @@ function plant_hamimelon() {
 }
 
 function after_harvest_banana() {
-  if (harvest_seasonb === true) {
+  if (harvest_seasonb === true && banana_purchased >= 0) {
     money = money + banana_revenue;
     banana.shift();
+    banana_purchased -= 1;
     banana_available += 1;
+    console.log(banana_purchased);
   }
-  harvest_seasonb === false;
 }
 
 function after_harvest_wheat() {
-  if (harvest_seasonw === true) {
+  if (harvest_seasonw === true && wheat_purchased >= 0) {
     money = money + wheat_revenue;
     wheat.shift();
     wheat_available += 1;
   }
-  harvest_seasonw === false;
 }
 function after_harvest_carrot() {
-  if (harvest_seasonc === true) {
+  if (harvest_seasonc === true && carrot_purchased >= 0) {
     money = money + carrot_revenue;
     carrot.shift();
     carrot_available += 1;
   }
-  harvest_seasonc === false;
 }
 
 function after_harvest_blueberry() {
-  if (harvest_seasonbl === true) {
+  if (harvest_seasonbl === true && blueberry_purchased >= 0) {
     money = money + blueberry_revenue;
     blueberry.shift();
     blueberry_available += 1;
   }
-  harvest_seasonbl === false;
 }
 
 function after_harvest_chili() {
-  if (harvest_seasonch === true) {
+  if (harvest_seasonch === true && chili_purchased >= 0) {
     money = money + chili_revenue;
     chili.shift();
     chili_available += 1;
   }
-  harvest_seasonch === false;
 }
 
 function after_harvest_cauliflower() {
-  if (harvest_seasonca === true) {
+  if (harvest_seasonca === true && cauliflower_purchased >= 0) {
     money = money + cauliflower_revenue;
     cauliflower.shift();
     cauliflower_available += 1;
   }
-  harvest_seasonca === false;
 }
 
 function after_harvest_corn() {
-  if (harvest_seasonc === true) {
+  if (harvest_seasonc === true && corn__purchased >= 0) {
     money = money + corn_revenue;
     corn.shift();
     corn_available += 1;
   }
-  harvest_seasonco === false;
 }
 
 function after_harvest_hamimelon() {
-  if (harvest_seasonha === true) {
+  if (harvest_seasonha === true && hamimelon_purchased >= 0) {
     money = money + hamimelon_revenue;
     hamimelon.shift();
     hamimelon_available += 1;
   }
-  harvest_seasonha === false;
 }
