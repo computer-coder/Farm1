@@ -50,7 +50,7 @@ start_positionyha = 500;
 var banana = [],
   banana_price = 20,
   banana_revenue = 20,
-  banana_available = 9,
+  banana_available = 4,
   banana_purchased = 0,
   banana_counter,
   banana_image;
@@ -197,6 +197,7 @@ function setup() {
   back2_button.position(88, 100);
 
   //Counters
+
   banana_counter = createSprite(50, 125, 40, 40);
   banana_counter.addImage(banana_image);
   wheat_counter = createSprite(1000, 125, 40, 40);
@@ -270,6 +271,8 @@ function draw() {
   else if (state === "play") {
     background(bg);
     back_button.hide();
+    manure_charge();
+    labour_charge();
     back1_button.show();
     back2_button.hide();
     harvest_buttonb.show();
@@ -345,7 +348,8 @@ function draw() {
     back_button.hide();
     back1_button.hide();
     back2_button.show();
-
+    manure_charge();
+    labour_charge();
     banana_counter.visible = true;
     wheat_counter.visible = true;
     carrot_counter.visible = true;
@@ -459,6 +463,30 @@ function draw() {
     }
   }
 
+  // End Page
+  else if (state == "end") {
+    background("white");
+    text("Amazing, You achived the goal ", 200, 200);
+    harvest_buttonb.hide();
+    harvest_buttonbl.hide();
+    harvest_buttonc.hide();
+    harvest_buttonca.hide();
+    harvest_buttonch.hide();
+    harvest_buttonco.hide();
+    harvest_buttonw.hide();
+    harvest_buttonha.hide();
+    shop_button.hide();
+    back1_button.hide();
+    back2_button.hide();
+    back_button.hide();
+    start_button.hide();
+    about_button.hide();
+  }
+
+  if (money >= 5003) {
+    state = "end";
+  }
+
   drawSprites();
   //if(banana[0].timer)
   //text(banana[0].timer, width-200 , 50)
@@ -486,7 +514,7 @@ function plant_banana() {
     start_positionxb < width, plant < banana_purchased;
     plant++
   ) {
-    banana.push(new Banana(start_positionxb, 100, 150, 150));
+    banana.push(new Banana(start_positionxb, start_positionyb, 150, 150));
     console.log(banana_purchased);
     start_positionxb += 100;
     if (start_positionxb > 300) {
@@ -673,5 +701,20 @@ function after_harvest_hamimelon() {
     money = money + hamimelon_revenue;
     hamimelon.shift();
     hamimelon_available += 1;
+  }
+}
+
+function labour_charge() {
+  if (frameCount % 1000 === 0) {
+    money -= 20;
+    alert(
+      "20 rupees have deducted from your account to pay the labourers salary"
+    );
+  }
+}
+function manure_charge() {
+  if (frameCount % 300 === 0) {
+    money -= 5;
+    alert("5 rupees have deducted from your account to pay for manure");
   }
 }
