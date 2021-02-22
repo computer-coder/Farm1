@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var money = 5000;
+var money = 100;
 var harvest_seasonb = false;
 var harvest_seasonc = false;
 var harvest_seasonw = false;
@@ -24,39 +24,39 @@ var start_button,
   harvest_buttonch,
   harvest_buttonco,
   harvest_buttonha,
-  start_positionxb = 100;
-start_positionyb = 100;
+  start_positionxb = 115;
+start_positionyb = 150;
 
-start_positionxw = 100;
-start_positionyw = 500;
+start_positionxw = 115;
+start_positionyw = 470;
 
-start_positionxc = 500;
-start_positionyc = 100;
+start_positionxc = 450;
+start_positionyc = 160;
 
-start_positionxca = 500;
-start_positionyca = 500;
+start_positionxca = 450;
+start_positionyca = 470;
 
-start_positionxco = 900;
+start_positionxco = 800;
 start_positionyco = 100;
 
-start_positionxch = 900;
-start_positionych = 500;
+start_positionxch = 780;
+start_positionych = 460;
 
-start_positionxbl = 1300;
-start_positionybl = 100;
+start_positionxbl = 1110;
+start_positionybl = 150;
 
-start_positionxha = 1300;
-start_positionyha = 500;
+start_positionxha = 1120;
+start_positionyha = 470;
 var banana = [],
-  banana_price = 20,
-  banana_revenue = 20,
-  banana_available = 4,
+  banana_price = 5,
+  banana_revenue = 15,
+  banana_available = 9,
   banana_purchased = 0,
   banana_counter,
   banana_image;
 
 var wheat = [],
-  wheat_price = 20,
+  wheat_price = 7,
   wheat_revenue = 20,
   wheat_available = 9,
   wheat_purchased = 0,
@@ -64,8 +64,8 @@ var wheat = [],
   wheat_image;
 
 var carrot = [],
-  carrot_price = 20,
-  carrot_revenue = 20,
+  carrot_price = 10,
+  carrot_revenue = 30,
   carrot_available = 9,
   carrot_purchased = 0,
   carrot_counter,
@@ -73,22 +73,22 @@ var carrot = [],
 
 var blueberry = [],
   blueberry_price = 20,
-  blueberry_revenue = 20,
+  blueberry_revenue = 50,
   blueberry_available = 9,
   blueberry_purchased = 0,
   blueberry_counter,
   blueberry_image;
 
 var cauliflower = [],
-  cauliflower_price = 20,
-  cauliflower_revenue = 20,
+  cauliflower_price = 7,
+  cauliflower_revenue = 16,
   cauliflower_available = 9,
   cauliflower_purchased = 0,
   cauliflower_counter,
   cauliflower_image;
 
 var chili = [],
-  chili_price = 20,
+  chili_price = 8,
   chili_revenue = 20,
   chili_available = 9,
   chili_purchased = 0,
@@ -96,16 +96,16 @@ var chili = [],
   chili_image;
 
 var corn = [],
-  corn_price = 20,
-  corn_revenue = 20,
+  corn_price = 9,
+  corn_revenue = 21,
   corn_available = 9,
   corn_purchased = 0,
   corn_counter,
   corn_image;
 
 var hamimelon = [],
-  hamimelon_price = 20,
-  hamimelon_revenue = 20,
+  hamimelon_price = 16,
+  hamimelon_revenue = 30,
   hamimelon_available = 9,
   hamimelon_purchased = 0,
   hamimelon_counter,
@@ -114,7 +114,7 @@ var hamimelon = [],
 var state = "intro";
 
 function preload() {
-  bg = loadImage("background.svg");
+  bg = loadImage("plant/background.png");
   banana_image = loadImage("plant/banana.svg");
   wheat_image = loadImage("plant/wheat.svg");
   carrot_image = loadImage("plant/carrot.svg");
@@ -133,7 +133,7 @@ function setup() {
   // About Page
   about_button = createButton("How to Play");
   about_button.mousePressed(about_state);
-  about_button.position(88, 56);
+  about_button.position(770, 400);
 
   //first page
   main = new Plant(1100, 358.5, 500, 500);
@@ -144,42 +144,42 @@ function setup() {
 
   start_button = createButton("Start");
   start_button.mousePressed(play_state);
-  start_button.position(88, 56);
+  start_button.position(720, 400);
 
   //Land
-  land1 = new Dirt(220, 265, 300, 300);
+  /*land1 = new Dirt(220, 265, 300, 300);
   land2 = new Dirt(220, 575, 300, 300);
   land3 = new Dirt(550, 265, 300, 300);
   land4 = new Dirt(550, 575, 300, 300);
   land5 = new Dirt(880, 265, 300, 300);
   land6 = new Dirt(880, 575, 300, 300);
   land7 = new Dirt(1210, 265, 300, 300);
-  land8 = new Dirt(1210, 575, 300, 300);
+  land8 = new Dirt(1210, 575, 300, 300);*/
 
   //Harvesting
   harvest_buttonb = createButton("Harvest");
-  harvest_buttonb.position(88, 80);
+  harvest_buttonb.position(189, 80);
 
   harvest_buttonc = createButton("Harvest");
-  harvest_buttonc.position(708, 80);
+  harvest_buttonc.position(489, 80);
 
   harvest_buttonw = createButton("Harvest");
-  harvest_buttonw.position(108, 80);
+  harvest_buttonw.position(789, 80);
 
   harvest_buttonbl = createButton("Harvest");
-  harvest_buttonbl.position(124, 80);
+  harvest_buttonbl.position(1089, 80);
 
   harvest_buttonca = createButton("Harvest");
-  harvest_buttonca.position(189, 80);
+  harvest_buttonca.position(189, 750);
 
   harvest_buttonch = createButton("Harvest");
-  harvest_buttonch.position(300, 80);
+  harvest_buttonch.position(489, 750);
 
   harvest_buttonco = createButton("Harvest");
-  harvest_buttonco.position(408, 80);
+  harvest_buttonco.position(789, 750);
 
   harvest_buttonha = createButton("Harvest");
-  harvest_buttonha.position(508, 80);
+  harvest_buttonha.position(1089, 750);
 
   //shopping page
   shop_button = createButton("Shop");
@@ -188,31 +188,31 @@ function setup() {
 
   back_button = createButton("Back");
   back_button.mousePressed(intro_state);
-  back_button.position(88, 100);
+  back_button.position(1289, 70);
   back1_button = createButton("Back");
   back1_button.mousePressed(intro_state);
-  back1_button.position(88, 100);
+  back1_button.position(1289, 80);
   back2_button = createButton("Back");
   back2_button.mousePressed(play_state);
-  back2_button.position(88, 100);
+  back2_button.position(1289, 80);
 
   //Counters
 
-  banana_counter = createSprite(50, 125, 40, 40);
+  banana_counter = createSprite(100, 200, 40, 40);
   banana_counter.addImage(banana_image);
-  wheat_counter = createSprite(1000, 125, 40, 40);
+  wheat_counter = createSprite(100, 350, 40, 40);
   wheat_counter.addImage(wheat_image);
-  blueberry_counter = createSprite(500, 125, 40, 40);
+  blueberry_counter = createSprite(100, 500, 40, 40);
   blueberry_counter.addImage(blueberry_image);
-  cauliflower_counter = createSprite(500, 125, 40, 40);
+  cauliflower_counter = createSprite(100, 650, 40, 40);
   cauliflower_counter.addImage(cauliflower_image);
-  chili_counter = createSprite(500, 125, 40, 40);
+  chili_counter = createSprite(800, 200, 40, 40);
   chili_counter.addImage(chili_image);
-  corn_counter = createSprite(500, 125, 40, 40);
+  corn_counter = createSprite(800, 350, 40, 40);
   corn_counter.addImage(corn_image);
-  hamimelon_counter = createSprite(500, 500, 40, 40);
+  hamimelon_counter = createSprite(800, 500, 40, 40);
   hamimelon_counter.addImage(hamimelon_image);
-  carrot_counter = createSprite(500, 125, 40, 40);
+  carrot_counter = createSprite(800, 650, 40, 40);
   carrot_counter.addImage(carrot_image);
 }
 
@@ -270,6 +270,9 @@ function draw() {
   //farm
   else if (state === "play") {
     background(bg);
+
+    about_button.hide();
+    start_button.hide();
     back_button.hide();
     manure_charge();
     labour_charge();
@@ -293,8 +296,6 @@ function draw() {
     harvest_buttonco.mousePressed(after_harvest_corn);
     harvest_buttonha.mousePressed(after_harvest_hamimelon);
 
-    about_button.hide();
-    start_button.hide();
     banana_counter.visible = false;
     wheat_counter.visible = false;
     carrot_counter.visible = false;
@@ -330,15 +331,15 @@ function draw() {
     for (var i = 0; i < hamimelon.length; i++) {
       hamimelon[i].display();
     }
-    //land1.display();
-    //land2.display();
-    //land3.display();
-    //land4.display();
-    //land5.display();
-    //land6.display();
-    //land7.display();
-    //land8.display();
-    text("Money in wallet: " + money, 80, 125);
+    /*land1.display();
+    land2.display();
+    land3.display();
+    land4.display();
+    land5.display();
+    land6.display();
+    land7.display();
+    land8.display();*/
+    //text("Money in wallet: " + money, 80, 125);
   }
 
   //shopping page
@@ -359,21 +360,89 @@ function draw() {
     corn_counter.visible = true;
     hamimelon_counter.visible = true;
 
-    textSize(70);
-    text("SHOP", 450, 70);
+    textSize(110);
+    text("SHOP", 450, 100);
     textSize(15);
-    text("Price: " + banana_price + "\nMoney in wallet: " + money, 80, 125);
-    text("Price: " + wheat_price + "\nMoney in wallet: " + money, 80, 125);
-    text("Price: " + carrot_price + "\nMoney in wallet: " + money, 80, 125);
-    text("Price: " + blueberry_price + "\nMoney in wallet: " + money, 80, 125);
-    text("Price: " + chili_price + "\nMoney in wallet: " + money, 80, 125);
-    text("Price: " + corn_price + "\nMoney in wallet: " + money, 80, 125);
     text(
-      "Price: " + cauliflower_price + "\nMoney in wallet: " + money,
-      80,
-      125
+      "Price: " +
+        banana_price +
+        "\nRevenue: " +
+        banana_revenue +
+        "\nMoney in wallet: " +
+        money,
+      200,
+      180
     );
-    text("Price: " + hamimelon_price + "\nMoney in wallet: " + money, 80, 125);
+    text(
+      "Price: " +
+        wheat_price +
+        "\nRevenue: " +
+        wheat_revenue +
+        "\nMoney in wallet: " +
+        money,
+      200,
+      330
+    );
+    text(
+      "Price: " +
+        carrot_price +
+        "\nRevenue: " +
+        carrot_revenue +
+        "\nMoney in wallet: " +
+        money,
+      200,
+      480
+    );
+    text(
+      "Price: " +
+        blueberry_price +
+        "\nRevenue: " +
+        blueberry_revenue +
+        "\nMoney in wallet: " +
+        money,
+      200,
+      630
+    );
+    text(
+      "Price: " +
+        chili_price +
+        "\nRevenue: " +
+        chili_revenue +
+        "\nMoney in wallet: " +
+        money,
+      900,
+      180
+    );
+    text(
+      "Price: " +
+        corn_price +
+        "\nRevenue: " +
+        corn_revenue +
+        "\nMoney in wallet: " +
+        money,
+      900,
+      330
+    );
+    text(
+      "Price: " +
+        cauliflower_price +
+        "\nRevenue: " +
+        cauliflower_revenue +
+        "\nMoney in wallet: " +
+        money,
+      900,
+      480
+    );
+    text(
+      "Price: " +
+        hamimelon_price +
+        "\nRevenue: " +
+        hamimelon_revenue +
+        "\nMoney in wallet: " +
+        money,
+      900,
+      630
+    );
     shop_button.hide();
     about_button.hide();
     harvest_buttonb.hide();
@@ -466,7 +535,8 @@ function draw() {
   // End Page
   else if (state == "end") {
     background("white");
-    text("Amazing, You achived the goal ", 200, 200);
+    textSize(100);
+    text("Amazing, You achived the goal ", 720, 400);
     harvest_buttonb.hide();
     harvest_buttonbl.hide();
     harvest_buttonc.hide();
@@ -507,134 +577,166 @@ function intro_state() {
 function shoppin_state() {
   state = "shopping";
 }
-
+var plantb = 0;
 function plant_banana() {
   for (
-    var plant = 0;
-    start_positionxb < width, plant < banana_purchased;
-    plant++
+    plantb = plantb;
+    start_positionxb < width, plantb < banana_purchased;
+    plantb++
   ) {
     banana.push(new Banana(start_positionxb, start_positionyb, 150, 150));
     console.log(banana_purchased);
     start_positionxb += 100;
-    if (start_positionxb > 300) {
+    if (start_positionxb > 380) {
       start_positionxb = 100;
       start_positionyb += 100;
     }
+    if (start_positionyb > 350) {
+      start_positionxb = 115;
+      start_positionyb = 150;
+    }
   }
 }
-
+var plantw = 0;
 function plant_wheat() {
   for (
-    var plant = 0;
-    start_positionxw < width, plant < wheat_purchased;
-    plant++
+    plantw = plantw;
+    start_positionxw < width, plantw < wheat_purchased;
+    plantw++
   ) {
-    wheat.push(new Wheat(start_positionxw, start_positionyw, 150, 150));
+    wheat.push(new Wheat(start_positionxw, start_positionyw, 100, 100));
     console.log(wheat);
     start_positionxw += 100;
-    if (start_positionxw > 300) {
-      start_positionxw = 100;
+    if (start_positionxw > 380) {
+      start_positionxw = 115;
       start_positionyw += 100;
     }
+    if (start_positionyw > 700) {
+      start_positionxw = 115;
+      start_positionyw = 470;
+    }
   }
 }
 
+var plantc = 0;
 function plant_carrot() {
   for (
-    var plant = 0;
-    start_positionxc < width, plant < carrot_purchased;
-    plant++
+    plantc = plantc;
+    start_positionxc < width, plantc < carrot_purchased;
+    plantc++
   ) {
-    carrot.push(new Carrot(start_positionxc, start_positionyc, 150, 150));
+    carrot.push(new Carrot(start_positionxc, start_positionyc, 100, 100));
     console.log(carrot);
     start_positionxc += 100;
-    if (start_positionxc > 800) {
-      start_positionxc = 500;
+    if (start_positionxc > 740) {
+      start_positionxc = 450;
       start_positionyc += 100;
     }
-  }
-}
-
-function plant_blueberry() {
-  for (
-    var plant = 0;
-    start_positionxbl < width, plant < blueberry_purchased;
-    plant++
-  ) {
-    blueberry.push(
-      new Blueberry(start_positionxbl, start_positionybl, 150, 150)
-    );
-    console.log(blueberry);
-    start_positionxbl += 100;
-    if (start_positionxbl > 1600) {
-      start_positionxbl = 1300;
-      start_positionybl += 100;
+    if (start_positionyc > 350) {
+      start_positionxc = 450;
+      start_positionyc = 160;
     }
   }
 }
-
-function plant_chili() {
-  for (
-    var plant = 0;
-    start_positionxch < width, plant < chili_purchased;
-    plant++
-  ) {
-    chili.push(new Chili(start_positionxch, start_positionych, 150, 150));
-    console.log(chili);
-    start_positionxch += 100;
-    if (start_positionxch > 1200) {
-      start_positionxch = 900;
-      start_positionych += 100;
-    }
-  }
-}
+var plantca = 0;
 function plant_cauliflower() {
   for (
-    var plant = 0;
-    start_positionxca < width, plant < cauliflower_purchased;
-    plant++
+    plantca = plantca;
+    start_positionxca < width, plantca < cauliflower_purchased;
+    plantca++
   ) {
     cauliflower.push(
-      new Cauliflower(start_positionxca, start_positionyca, 150, 150)
+      new Cauliflower(start_positionxca, start_positionyca, 100, 100)
     );
     console.log(cauliflower);
     start_positionxca += 100;
-    if (start_positionxca > 800) {
-      start_positionxca = 500;
+    if (start_positionxca > 740) {
+      start_positionxca = 450;
       start_positionyca += 100;
+    }
+    if (start_positionyca > 800) {
+      start_positionxca = 450;
+      start_positionyca = 470;
     }
   }
 }
+var plantco = 0;
 function plant_corn() {
   for (
-    var plant = 0;
-    start_positionxco < width, plant < corn_purchased;
-    plant++
+    var plantco = plantco;
+    start_positionxco < width, plantco < corn_purchased;
+    plantco++
   ) {
-    corn.push(new Corn(start_positionxco, start_positionyco, 150, 150));
+    corn.push(new Corn(start_positionxco, start_positionyco, 100, 100));
     console.log(corn);
     start_positionxco += 100;
-    if (start_positionxco > 1200) {
-      start_positionxco = 900;
+    if (start_positionxco > 1080) {
+      start_positionxco = 800;
       start_positionyco += 100;
     }
   }
 }
+var plantch = 0;
+function plant_chili() {
+  for (
+    plantch = plantch;
+    start_positionxch < width, plantch < chili_purchased;
+    plantch++
+  ) {
+    chili.push(new Chili(start_positionxch, start_positionych, 100, 100));
+    console.log(chili);
+    start_positionxch += 100;
+    if (start_positionxch > 1050) {
+      start_positionxch = 780;
+      start_positionych += 100;
+    }
+    if (start_positionych > 800) {
+      start_positionxch = 780;
+      start_positionych = 460;
+    }
+  }
+}
+var plantbl = 0;
+function plant_blueberry() {
+  for (
+    plantbl = plantbl;
+    start_positionxbl < width, plantbl < blueberry_purchased;
+    plantbl++
+  ) {
+    blueberry.push(
+      new Blueberry(start_positionxbl, start_positionybl, 100, 100)
+    );
+    console.log(blueberry);
+    start_positionxbl += 100;
+    if (start_positionxbl > 1350) {
+      start_positionxbl = 1110;
+      start_positionybl += 100;
+    }
+    if (start_positionybl > 350) {
+      start_positionxbl = 1110;
+      start_positionybl = 150;
+    }
+  }
+}
+var plantha = 0;
 function plant_hamimelon() {
   for (
-    var plant = 0;
-    start_positionxha < width, plant < hamimelon_purchased;
-    plant++
+    plantha = plantha;
+    start_positionxha < width, plantha < hamimelon_purchased;
+    plantha++
   ) {
     hamimelon.push(
-      new Hamimelon(start_positionxha, start_positionyha, 150, 150)
+      new Hamimelon(start_positionxha, start_positionyha, 100, 100)
     );
     console.log(hamimelon);
     start_positionxha += 100;
-    if (start_positionxha > 1600) {
-      start_positionxha = 1300;
+    if (start_positionxha > 1350) {
+      start_positionxha = 1120;
       start_positionyha += 100;
+    }
+    if (start_positionyha > 770) {
+      start_positionxha = 1120;
+      start_positionyha = 470;
     }
   }
 }
@@ -643,7 +745,6 @@ function after_harvest_banana() {
   if (harvest_seasonb === true && banana_purchased >= 0) {
     money = money + banana_revenue;
     banana.shift();
-    banana_purchased -= 1;
     banana_available += 1;
     console.log(banana_purchased);
   }
@@ -689,7 +790,7 @@ function after_harvest_cauliflower() {
 }
 
 function after_harvest_corn() {
-  if (harvest_seasonc === true && corn__purchased >= 0) {
+  if (harvest_seasonco === true && corn__purchased >= 0) {
     money = money + corn_revenue;
     corn.shift();
     corn_available += 1;
@@ -705,16 +806,16 @@ function after_harvest_hamimelon() {
 }
 
 function labour_charge() {
-  if (frameCount % 1000 === 0) {
+  if (frameCount % 3000 === 0) {
     money -= 20;
     alert(
-      "20 rupees have deducted from your account to pay the labourers salary"
+      "20 rupees have been deducted from your account to pay the labourers salary"
     );
   }
 }
 function manure_charge() {
-  if (frameCount % 300 === 0) {
+  if (frameCount % 1000 === 0) {
     money -= 5;
-    alert("5 rupees have deducted from your account to pay for manure");
+    alert("5 rupees have been deducted from your account to pay for manure");
   }
 }
