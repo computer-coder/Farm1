@@ -114,14 +114,14 @@ var hamimelon = [],
 var state = "intro";
 
 function preload() {
-  bg = loadImage("background.png");
-  banana_image = loadImage("banana.svg");
-  wheat_image = loadImage("wheat.svg");
-  carrot_image = loadImage("carrot.svg");
-  blueberry_image = loadImage("blueberry.svg");
-  cauliflower_image = loadImage("cauliflower.svg");
-  chili_image = loadImage("chili.svg");
-  corn_image = loadImage("corn.svg");
+  bg = loadImage("plant/background.png");
+  banana_image = loadImage("plant/banana.svg");
+  wheat_image = loadImage("plant/wheat.svg");
+  carrot_image = loadImage("plant/carrot.svg");
+  blueberry_image = loadImage("plant/blueberry.svg");
+  cauliflower_image = loadImage("plant/cauliflower.svg");
+  chili_image = loadImage("plant/chili.svg");
+  corn_image = loadImage("plant/corn.svg");
   hamimelon_image = loadImage("plant/hamimelon.svg");
 }
 
@@ -145,16 +145,6 @@ function setup() {
   start_button = createButton("Start");
   start_button.mousePressed(play_state);
   start_button.position(720, 400);
-
-  //Land
-  /*land1 = new Dirt(220, 265, 300, 300);
-  land2 = new Dirt(220, 575, 300, 300);
-  land3 = new Dirt(550, 265, 300, 300);
-  land4 = new Dirt(550, 575, 300, 300);
-  land5 = new Dirt(880, 265, 300, 300);
-  land6 = new Dirt(880, 575, 300, 300);
-  land7 = new Dirt(1210, 265, 300, 300);
-  land8 = new Dirt(1210, 575, 300, 300);*/
 
   //Harvesting
   harvest_buttonb = createButton("Harvest");
@@ -214,6 +204,14 @@ function setup() {
   hamimelon_counter.addImage(hamimelon_image);
   carrot_counter = createSprite(800, 650, 40, 40);
   carrot_counter.addImage(carrot_image);
+
+  // End page
+  main1 = new Plant(680, 550, 500, 500);
+  main1.image = loadImage("logo.png");
+  streamer = new Plant(250, 550, 500, 500);
+  streamer.image = loadImage("confetti.png");
+  streamer1 = new Plant(1110, 550, 500, 500);
+  streamer1.image = loadImage("confetti1.png");
 }
 
 function draw() {
@@ -331,15 +329,8 @@ function draw() {
     for (var i = 0; i < hamimelon.length; i++) {
       hamimelon[i].display();
     }
-    /*land1.display();
-    land2.display();
-    land3.display();
-    land4.display();
-    land5.display();
-    land6.display();
-    land7.display();
-    land8.display();*/
-    //text("Money in wallet: " + money, 80, 125);
+
+    text("Money in wallet: " + money, 80, 125);
   }
 
   //shopping page
@@ -535,8 +526,15 @@ function draw() {
   // End Page
   else if (state == "end") {
     background("white");
-    textSize(100);
-    text("Amazing, You achived the goal ", 720, 400);
+    textSize(70);
+    text(
+      "Amazing, You were able to make a \n                   1000 rupees! ",
+      100,
+      150
+    );
+    streamer.display();
+    streamer1.display();
+    main1.display();
     harvest_buttonb.hide();
     harvest_buttonbl.hide();
     harvest_buttonc.hide();
@@ -553,7 +551,7 @@ function draw() {
     about_button.hide();
   }
 
-  if (money >= 5003) {
+  if (money >= 1000) {
     state = "end";
   }
 
@@ -670,10 +668,10 @@ function plant_corn() {
     corn.push(new Corn(start_positionxco, start_positionyco, 100, 100));
     console.log(corn);
     start_positionxco += 100;
-    if (start_positionxco > 1080) {
+    /*if (start_positionxco > 1080) {
       start_positionxco = 800;
       start_positionyco += 100;
-    }
+    }*/
   }
 }
 var plantch = 0;
