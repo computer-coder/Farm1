@@ -1,9 +1,9 @@
 class Carrot extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/carrot_seed.svg");
-    this.image1 = loadImage("plant/radish_grow.svg");
-    this.image2 = loadImage("plant/carrot_harvest.svg");
+    this.image = loadImage("carrot_seed.svg");
+    this.image1 = loadImage("radish_grow.svg");
+    this.image2 = loadImage("carrot_harvest.svg");
     this.stage;
     this.timer = 0;
   }
