@@ -630,7 +630,7 @@ function plant_carrot() {
       start_positionxc = 450;
       start_positionyc += 100;
     }
-    if (start_positionyc > 350) {
+    if (start_positionyc > 400) {
       start_positionxc = 450;
       start_positionyc = 160;
     }
