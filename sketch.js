@@ -672,9 +672,9 @@ function plant_corn() {
       start_positionxco = 780;
       start_positionyco += 100;
     }
-    if (start_positionyca > 300) {
-      start_positionxca = 780;
-      start_positionyca = 150;
+    if (start_positionyco > 350) {
+      start_positionxco = 780;
+      start_positionyco = 150;
     }
   }
 }
@@ -692,7 +692,7 @@ function plant_chili() {
       start_positionxch = 780;
       start_positionych += 100;
     }
-    if (start_positionych > 800) {
+    if (start_positionych > 740) {
       start_positionxch = 780;
       start_positionych = 460;
     }
@@ -736,7 +736,7 @@ function plant_hamimelon() {
       start_positionxha = 1120;
       start_positionyha += 100;
     }
-    if (start_positionyha > 770) {
+    if (start_positionyha > 740) {
       start_positionxha = 1120;
       start_positionyha = 470;
     }
