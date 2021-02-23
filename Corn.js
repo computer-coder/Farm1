@@ -1,9 +1,9 @@
 class Corn extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/corn_seed.svg");
-    this.image1 = loadImage("plant/corn_grow.svg");
-    this.image2 = loadImage("plant/corn_harvest.svg");
+    this.image = loadImage("corn_seed.svg");
+    this.image1 = loadImage("corn_grow.svg");
+    this.image2 = loadImage("corn_harvest.svg");
     this.stage;
     this.timer = 0;
   }
