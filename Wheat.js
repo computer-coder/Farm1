@@ -1,9 +1,9 @@
 class Wheat extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/wheat_seed.svg");
-    this.image1 = loadImage("plant/wheat_grow.svg");
-    this.image2 = loadImage("plant/wheat_harvest.svg");
+    this.image = loadImage("wheat_seed.svg");
+    this.image1 = loadImage("wheat_grow.svg");
+    this.image2 = loadImage("wheat_harvest.svg");
     this.stage;
     this.timer = 0;
   }
