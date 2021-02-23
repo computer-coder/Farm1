@@ -586,7 +586,7 @@ function plant_banana() {
     console.log(banana_purchased);
     start_positionxb += 100;
     if (start_positionxb > 380) {
-      start_positionxb = 100;
+      start_positionxb = 115;
       start_positionyb += 100;
     }
     if (start_positionyb > 350) {
