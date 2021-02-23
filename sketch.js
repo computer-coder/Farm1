@@ -151,37 +151,37 @@ function setup() {
   harvest_buttonb.position(189, 80);
 
   harvest_buttonc = createButton("Harvest");
-  harvest_buttonc.position(489, 80);
+  harvest_buttonc.position(500, 80);
 
   harvest_buttonw = createButton("Harvest");
-  harvest_buttonw.position(789, 80);
+  harvest_buttonw.position(850, 80);
 
   harvest_buttonbl = createButton("Harvest");
-  harvest_buttonbl.position(1089, 80);
+  harvest_buttonbl.position(1189, 80);
 
   harvest_buttonca = createButton("Harvest");
   harvest_buttonca.position(189, 750);
 
   harvest_buttonch = createButton("Harvest");
-  harvest_buttonch.position(489, 750);
+  harvest_buttonch.position(500, 750);
 
   harvest_buttonco = createButton("Harvest");
-  harvest_buttonco.position(789, 750);
+  harvest_buttonco.position(850, 750);
 
   harvest_buttonha = createButton("Harvest");
-  harvest_buttonha.position(1089, 750);
+  harvest_buttonha.position(1189, 750);
 
   //shopping page
   shop_button = createButton("Shop");
   shop_button.mousePressed(shoppin_state);
-  shop_button.position(88, 56);
+  shop_button.position(20, 20);
 
   back_button = createButton("Back");
   back_button.mousePressed(intro_state);
   back_button.position(1289, 70);
   back1_button = createButton("Back");
   back1_button.mousePressed(intro_state);
-  back1_button.position(1289, 80);
+  back1_button.position(1390, 30);
   back2_button = createButton("Back");
   back2_button.mousePressed(play_state);
   back2_button.position(1289, 80);
@@ -330,7 +330,7 @@ function draw() {
       hamimelon[i].display();
     }
 
-    text("Money in wallet: " + money, 80, 125);
+    text("Money in wallet: " + money, 20, 60);
   }
 
   //shopping page
