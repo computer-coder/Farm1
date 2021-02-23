@@ -114,15 +114,15 @@ var hamimelon = [],
 var state = "intro";
 
 function preload() {
-  bg = loadImage("plant/background.png");
-  banana_image = loadImage("plant/banana.svg");
-  wheat_image = loadImage("plant/wheat.svg");
-  carrot_image = loadImage("plant/carrot.svg");
-  blueberry_image = loadImage("plant/blueberry.svg");
-  cauliflower_image = loadImage("plant/cauliflower.svg");
-  chili_image = loadImage("plant/chili.svg");
-  corn_image = loadImage("plant/corn.svg");
-  hamimelon_image = loadImage("plant/hamimelon.svg");
+  bg = loadImage("background.png");
+  banana_image = loadImage("banana.svg");
+  wheat_image = loadImage("wheat.svg");
+  carrot_image = loadImage("carrot.svg");
+  blueberry_image = loadImage("blueberry.svg");
+  cauliflower_image = loadImage("cauliflower.svg");
+  chili_image = loadImage("chili.svg");
+  corn_image = loadImage("corn.svg");
+  hamimelon_image = loadImage("hamimelon.svg");
 }
 
 function setup() {
@@ -154,19 +154,19 @@ function setup() {
   harvest_buttonc.position(500, 80);
 
   harvest_buttonw = createButton("Harvest");
-  harvest_buttonw.position(850, 80);
+  harvest_buttonw.position(189, 750);
 
   harvest_buttonbl = createButton("Harvest");
   harvest_buttonbl.position(1189, 80);
 
   harvest_buttonca = createButton("Harvest");
-  harvest_buttonca.position(189, 750);
+  harvest_buttonca.position(500, 750);
 
   harvest_buttonch = createButton("Harvest");
-  harvest_buttonch.position(500, 750);
+  harvest_buttonch.position(850, 750);
 
   harvest_buttonco = createButton("Harvest");
-  harvest_buttonco.position(850, 750);
+  harvest_buttonco.position(850, 80);
 
   harvest_buttonha = createButton("Harvest");
   harvest_buttonha.position(1189, 750);
@@ -359,7 +359,7 @@ function draw() {
         banana_price +
         "\nRevenue: " +
         banana_revenue +
-        "\nMoney in wallet: " +
+        "\nMoney in wallet: ]" +
         money,
       200,
       180
@@ -661,7 +661,7 @@ function plant_cauliflower() {
 var plantco = 0;
 function plant_corn() {
   for (
-    var plantco = plantco;
+    plantco = plantco;
     start_positionxco < width, plantco < corn_purchased;
     plantco++
   ) {
@@ -788,7 +788,7 @@ function after_harvest_cauliflower() {
 }
 
 function after_harvest_corn() {
-  if (harvest_seasonco === true && corn__purchased >= 0) {
+  if (harvest_seasonco === true && corn_purchased >= 0) {
     money = money + corn_revenue;
     corn.shift();
     corn_available += 1;
