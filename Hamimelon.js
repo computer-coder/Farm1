@@ -1,9 +1,9 @@
 class Hamimelon extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/hamimelon_seed.svg");
-    this.image1 = loadImage("plant/hamimelon_grow.svg");
-    this.image2 = loadImage("plant/hamimelon_harvest.svg");
+    this.image = loadImage("hamimelon_seed.svg");
+    this.image1 = loadImage("hamimelon_grow.svg");
+    this.image2 = loadImage("hamimelon_harvest.svg");
     this.stage;
     this.timer = 0;
   }
