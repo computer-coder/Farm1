@@ -1,9 +1,9 @@
 class Chili extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/chili_seed.svg");
-    this.image1 = loadImage("plant/chili_grow.svg");
-    this.image2 = loadImage("plant/chili_harvest.svg");
+    this.image = loadImage("chili_seed.svg");
+    this.image1 = loadImage("chili_grow.svg");
+    this.image2 = loadImage("chili_harvest.svg");
     this.stage;
     this.timer = 0;
   }
