@@ -652,7 +652,7 @@ function plant_cauliflower() {
       start_positionxca = 450;
       start_positionyca += 100;
     }
-    if (start_positionyca > 800) {
+    if (start_positionyca > 740) {
       start_positionxca = 450;
       start_positionyca = 470;
     }
