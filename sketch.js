@@ -114,14 +114,14 @@ var hamimelon = [],
 var state = "intro";
 
 function preload() {
-  bg = loadImage("plant/background.png");
-  banana_image = loadImage("plant/banana.svg");
-  wheat_image = loadImage("plant/wheat.svg");
-  carrot_image = loadImage("plant/carrot.svg");
-  blueberry_image = loadImage("plant/blueberry.svg");
-  cauliflower_image = loadImage("plant/cauliflower.svg");
-  chili_image = loadImage("plant/chili.svg");
-  corn_image = loadImage("plant/corn.svg");
+  bg = loadImage("background.png");
+  banana_image = loadImage("banana.svg");
+  wheat_image = loadImage("wheat.svg");
+  carrot_image = loadImage("carrot.svg");
+  blueberry_image = loadImage("blueberry.svg");
+  cauliflower_image = loadImage("cauliflower.svg");
+  chili_image = loadImage("chili.svg");
+  corn_image = loadImage("corn.svg");
   hamimelon_image = loadImage("plant/hamimelon.svg");
 }
 
