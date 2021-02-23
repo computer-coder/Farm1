@@ -1,9 +1,9 @@
 class Blueberry extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/blueberry_seed.svg");
-    this.image1 = loadImage("plant/blueberry_grow.svg");
-    this.image2 = loadImage("plant/blueberry_harvest.svg");
+    this.image = loadImage("blueberry_seed.svg");
+    this.image1 = loadImage("blueberry_grow.svg");
+    this.image2 = loadImage("blueberry_harvest.svg");
     this.stage;
     this.timer = 0;
   }
