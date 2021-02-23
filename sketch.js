@@ -257,7 +257,7 @@ function draw() {
     text("HOW TO PLAY", 300, 100);
     textSize(30);
     text(
-      "Welcome to Mr.Daniel's Farm. He is away for a while and in that time you need to tend to the farm. \n He has left very clear instructions that you must earn a 1000 rupees before he comes returns. \n So here's what you need to do-. \n Click on start to begin the game \nClick on shop to buy the seeds and sow them in the fields\n  In the shop you have different vegetables to choose from you can buy these by clicking on \nthe image of them \n Rember You spend Rs5 every time you apply manure. Note that the application of the manure isn't \n done by you it's done by the labourers (the code) \n Different veggies have their own time to mature \n You get a different amout of money every time you harvest the veggies",
+      "Welcome to Mr.Daniel's Farm. He is away for a while and in that time you need to tend to the farm. \n He has left very clear instructions that you must earn a 1000 rupees before he comes returns. \n So here's what you need to do-. \n Click on start to begin the game \nClick on shop to buy the seeds and sow them in the fields\n  In the shop you have different vegetables to choose from you can buy these by clicking on \nthe image of them \n Remember You spend Rs5 every time you apply manure. Note that the application of the manure isn't \n done by you it's done by the labourers (the code) \n Different veggies have their own time to mature \n You get a different amout of money every time you harvest the veggies",
       50,
       200
     );
