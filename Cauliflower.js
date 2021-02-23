@@ -1,9 +1,9 @@
 class Cauliflower extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/cauliflower_seed.svg");
-    this.image1 = loadImage("plant/cauliflower_grow.svg");
-    this.image2 = loadImage("plant/cauliflower_harvest.svg");
+    this.image = loadImage("cauliflower_seed.svg");
+    this.image1 = loadImage("cauliflower_grow.svg");
+    this.image2 = loadImage("cauliflower_harvest.svg");
     this.stage;
     this.timer = 0;
   }
