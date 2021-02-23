@@ -1,9 +1,9 @@
 class Banana extends BaseClass {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.image = loadImage("plant/banana_seed.svg");
-    this.image1 = loadImage("plant/banana_grow.svg");
-    this.image2 = loadImage("plant/banana_harvest.svg");
+    this.image = loadImage("banana_seed.svg");
+    this.image1 = loadImage("banana_grow.svg");
+    this.image2 = loadImage("banana_harvest.svg");
     this.stage;
     this.timer = 0;
   }
